@@ -20,6 +20,7 @@ import Lexicon from './Lexicon'
 import PDFLexicon from './PDFLexicon'
 // import LLBNav from './LLBNav'
 import * as ga from './ga.js'
+import WordListGenerator from './WordListGenerator'
 
 export default function Home({ params }) {
   const router = useRouter()
@@ -252,6 +253,11 @@ export default function Home({ params }) {
                   .
                 </p>
                 <PDFLexicon frequency={frequency} data={lexicon} />
+
+                <WordListGenerator
+                  frequency={frequency}
+                  lexiconData={lexicon}
+                />
               </Alert>
 
               <Alert variant='warning'>
