@@ -20,6 +20,7 @@ import Lexicon from './Lexicon'
 import PDFLexicon from './PDFLexicon'
 // import LLBNav from './LLBNav'
 import * as ga from './ga.js'
+import { arrayUniqueByKey } from '../util/array-unique'
 
 export default function Home({ params }) {
   const router = useRouter()
@@ -241,7 +242,8 @@ export default function Home({ params }) {
               <Alert variant='light'>
                 <Alert.Heading>📌 Lexique créé!</Alert.Heading>
                 <p>
-                  <b>{lexicon.length}</b> des mots de{' '}
+                  <b>{arrayUniqueByKey(lexicon, 'strong').length}</b> des mots
+                  de{' '}
                   <b>
                     {book} {chapters}
                   </b>{' '}
